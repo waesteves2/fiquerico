@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./trevo4.png" type="image/x-icon">
+    <title>Bolão da Mega da Virada</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color:white; /* Alteração para verde */
+            color: #fff; /* Alteração para branco */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h2 {
+            color: #1ddd4a; /* Alteração para verde */
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .participant-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            gap: 1px;
+        }
+
+        .participant {
+            background-color: #1ac442; /* Alteração para verde */
+            color: white; /* Alteração para branco */
+            padding: 13px;
+            margin: 3px;
+            border: 2px solid white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            width: calc(100% - 10px);
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .participant:hover {
+            background-color: #218838; /* Alteração para tom mais escuro de verde */
+        }
+
+        .ticket-details {
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color:white; /* Alteração para verde */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100vw;
+            max-width: 600px;
+            box-sizing: border-box;
+            color: #000; /* Alteração para preto */
+            background-image: url('trevo.png'); /* Substitua 'trevo.png' pelo caminho da sua imagem de trevo */
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #28a745; /* Alteração para verde */
+            color: white; /* Alteração para branco */
+        }
+
+        .not-paid {
+            color: #dc3545;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #dc3545;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+
+        img{
+
+            position: relative;
+            bottom: -70px;
+
+        }
+    </style>
+</head>
+<body>
+
+
+    <img src="./trevo4.png" alt="" width="200">
+    <h2>Bolão da Mega da Virada RTE</h2>
+
+    <ul class="participant-list">
+        <li class="participant" onclick="showTicketDetails('participant1')">Beatriz Veratti</li>
+        <li class="participant" onclick="showTicketDetails('participant2')">Stephanie Fortunato</li>
+        <li class="participant" onclick="showTicketDetails('participant3')">Elton Esteves</li>
+        <li class="participant" onclick="showTicketDetails('participant4')">Marco Amorim</li>
+        <li class="participant" onclick="showTicketDetails('participant5')">Eduardo Soufen</li>
+        <li class="participant" onclick="showTicketDetails('participant6')">Cleber Araujo</li>
+        <li class="participant" onclick="showTicketDetails('participant7')">Amanda Pelegrino</li>
+        <li class="participant" onclick="showTicketDetails('participant8')">Marcelo Murilo</li>
+        <li class="participant" onclick="showTicketDetails('participant9')">Bruno Piva</li>
+        <li class="participant" onclick="showTicketDetails('participant10')">Eduardo Navarro</li>
+        <li class="participant" onclick="showTicketDetails('participant11')">Priscila Aparecida</li>
+        <li class="participant" onclick="showTicketDetails('participant12')">Telma Rossanese</li>
+        <!-- Adicione mais participantes conforme necessário -->
+    </ul>
+
+    <div id="participant1" class="ticket-details">
+        <span class="close-button" onclick="closeTicketDetails('participant1')">X</span>
+        <h2>Beatriz</h2>
+        <table>
+            <tr>
+                <th>Bilhete</th>
+                <th>Números</th>
+                <th>Pago</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>02, 11, 23, 34, 50, 51</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>09, 12, 30, 42, 46, 53</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>10, 12, 36, 41, 51, 56</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>01, 08, 13, 14, 25, 45</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <!-- Adicione mais bilhetes conforme necessário -->
+        </table>
+
+        
+    </div>
+
+    <div id="participant2" class="ticket-details">
+        <span class="close-button" onclick="closeTicketDetails('participant2')">X</span>
+
+        <h2>Stephanie</h2>
+        <table>
+            <tr>
+                <th>Bilhete</th>
+                <th>Números</th>
+                <th>Pago</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>01, 05, 10, 33, 46, 60</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>04, 09, 29, 38, 41, 57</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>08, 15, 20, 25, 36, 49</td>
+                <td class="not-paid">Não</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>03, 06, 17, 22, 43, 59</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <!-- Adicione mais bilhetes conforme necessário -->
+        </table>
+    </div>
+
+    
+    <div id="participant3" class="ticket-details">
+        <span class="close-button" onclick="closeTicketDetails('participant3')">X</span>
+
+        <h2>Elton</h2>
+        <table>
+            <tr>
+                <th>Bilhete</th>
+                <th>Números</th>
+                <th>Pago</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>01, 06, 17, 22, 24, 35</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>05, 10, 23, 32, 35, 53</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>02, 06, 20, 29, 32, 53</td>
+                <td class="not-paid">Não</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>20, 30, 36, 38, 47, 56</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <!-- Adicione mais bilhetes conforme necessário -->
+        </table>
+    </div>
+
+
+    <!-- Adicione mais divs de detalhes conforme necessário -->
+
+    <script>
+        function showTicketDetails(participantId) {
+            var ticketDetails = document.getElementsByClassName('ticket-details');
+            for (var i = 0; i < ticketDetails.length; i++) {
+                ticketDetails[i].style.display = 'none';
+            }
+
+            document.getElementById(participantId).style.display = 'block';
+        }
+
+        function closeTicketDetails(participantId) {
+            document.getElementById(participantId).style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
