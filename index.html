@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,11 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color:white; /* Alteração para verde */
-            color: #fff; /* Alteração para branco */
-            display: flex;
+            background-color: white;
+            /* Alteração para verde */
+            color: #fff;
+            /* Alteração para branco */
+            display: block;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -18,7 +21,8 @@
         }
 
         h2 {
-            color: #1ddd4a; /* Alteração para verde */
+            color: #1ddd4a;
+            /* Alteração para verde */
             text-align: center;
             margin-top: 50px;
         }
@@ -33,8 +37,10 @@
         }
 
         .participant {
-            background-color: #1ac442; /* Alteração para verde */
-            color: white; /* Alteração para branco */
+            background-color: #1ac442;
+            /* Alteração para verde */
+            color: white;
+            /* Alteração para branco */
             padding: 13px;
             margin: 3px;
             border: 2px solid white;
@@ -44,10 +50,13 @@
             width: calc(100% - 10px);
             box-sizing: border-box;
             text-align: center;
+
+
         }
 
         .participant:hover {
-            background-color: #218838; /* Alteração para tom mais escuro de verde */
+            background-color: #218838;
+            /* Alteração para tom mais escuro de verde */
         }
 
         .ticket-details {
@@ -57,15 +66,18 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color:white; /* Alteração para verde */
+            background-color: white;
+            /* Alteração para verde */
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100vw;
             max-width: 600px;
             box-sizing: border-box;
-            color: #000; /* Alteração para preto */
-            background-image: url('trevo.png'); /* Substitua 'trevo.png' pelo caminho da sua imagem de trevo */
+            color: #000;
+            /* Alteração para preto */
+            background-image: url('trevo.png');
+            /* Substitua 'trevo.png' pelo caminho da sua imagem de trevo */
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -76,15 +88,18 @@
             width: 100%;
         }
 
-        th, td {
+        th,
+        td {
             padding: 10px;
             border: 1px solid #ddd;
             text-align: center;
         }
 
         th {
-            background-color: #28a745; /* Alteração para verde */
-            color: white; /* Alteração para branco */
+            background-color: #28a745;
+            /* Alteração para verde */
+            color: white;
+            /* Alteração para branco */
         }
 
         .not-paid {
@@ -103,20 +118,21 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
         }
 
 
-        img{
+        img {
 
             position: relative;
-            bottom: -90px;
-
+            margin-left: 25%;
         }
     </style>
 </head>
+
 <body>
 
 
@@ -130,12 +146,20 @@
         <li class="participant" onclick="showTicketDetails('participant4')">Marco Amorim</li>
         <li class="participant" onclick="showTicketDetails('participant5')">Eduardo Soufen</li>
         <li class="participant" onclick="showTicketDetails('participant6')">Cleber Araujo</li>
-        <li class="participant" onclick="showTicketDetails('participant7')">Amanda Pelegrino</li>
+        <li class="participant" onclick="showTicketDetails('participant7')">Amanda Pelegrin</li>
         <li class="participant" onclick="showTicketDetails('participant8')">Marcelo Murilo</li>
         <li class="participant" onclick="showTicketDetails('participant9')">Bruno Piva</li>
         <li class="participant" onclick="showTicketDetails('participant10')">Eduardo Navarro</li>
         <li class="participant" onclick="showTicketDetails('participant11')">Priscila Aparecida</li>
         <li class="participant" onclick="showTicketDetails('participant12')">Telma Rossanese</li>
+        <li class="participant" onclick="showTicketDetails('participant13')">Bruno Eugenio</li>
+        <li class="participant" onclick="showTicketDetails('participant14')">Fernando Cruz</li>
+        <li class="participant" onclick="showTicketDetails('participant15')">João Carlos</li>
+        <li class="participant" onclick="showTicketDetails('participant16')">Silvana</li>
+        <li class="participant" onclick="showTicketDetails('participant17')">Paulo Consalto</li>
+        <li class="participant" onclick="showTicketDetails('participant18')">Matheus</li>
+        <li class="participant" onclick="showTicketDetails('participant19')">Rafael AG</li>
+        <li class="participant" onclick="showTicketDetails('participant20')"></li>
         <!-- Adicione mais participantes conforme necessário -->
     </ul>
 
@@ -171,7 +195,7 @@
             <!-- Adicione mais bilhetes conforme necessário -->
         </table>
 
-        
+
     </div>
 
     <div id="participant2" class="ticket-details">
@@ -209,7 +233,7 @@
         </table>
     </div>
 
-    
+
     <div id="participant3" class="ticket-details">
         <span class="close-button" onclick="closeTicketDetails('participant3')">X</span>
 
@@ -245,6 +269,41 @@
         </table>
     </div>
 
+    <div id="participant5" class="ticket-details">
+        <span class="close-button" onclick="closeTicketDetails('participant5')">X</span>
+
+        <h2>Eduardo Soufen</h2>
+        <table>
+            <tr>
+                <th>Bilhete</th>
+                <th>Números</th>
+                <th>Pago</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>03, 08, 15, 29, 35, 47</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>05, 12, 18, 39, 43, 55</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>02, 16, 19, 37, 48, 51</td>
+                <td class="not-paid">Não</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>10, 14, 21, 27, 33, 54</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <!-- Adicione mais bilhetes conforme necessário -->
+        </table>
+    </div>
+
 
     <!-- Adicione mais divs de detalhes conforme necessário -->
 
@@ -258,10 +317,12 @@
             document.getElementById(participantId).style.display = 'block';
         }
 
+
         function closeTicketDetails(participantId) {
             document.getElementById(participantId).style.display = 'none';
         }
     </script>
 
 </body>
+
 </html>
