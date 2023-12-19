@@ -129,15 +129,77 @@
 
             position: relative;
             margin-left: 25%;
+           
+            
         }
+
+        h3,
+        h4{
+
+            color: #28a745;
+        }
+
+        #result{
+
+            color: #1ac442;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        #wheel {
+      cursor: pointer;
+      transition: transform 4s ease-out; /* Tempo de rotação e aceleração */
+    }
     </style>
 </head>
 
 <body>
 
+    <img id="wheel" src="./trevo4.png" alt="" width="200" onclick="spinWheel()">
+    <div id="result"></div>
+    <script>
+        function spinWheel() {
+          // Bloqueia o botão enquanto a rotação está em andamento
+          document.getElementById('wheel').style.pointerEvents = 'none';
+        
+          // Gera números aleatórios de 1 a 60 sem repetição
+          let numbers = Array.from({ length: 60 }, (_, index) => index + 1);
+          numbers.sort(() => Math.random() - 0.5);
+          numbers = numbers.slice(0, 6);
+        
+          // Inicia a rotação
+          const wheel = document.getElementById('wheel');
+          wheel.style.transform = 'rotate(0deg)';
+        
+          // Aguarda um curto período e, em seguida, adiciona a rotação
+          setTimeout(() => {
+            const rotation = Math.floor(Math.random() * 360) + 3600; // Gira pelo menos 10 voltas
+            wheel.style.transition = 'transform 4s ease-out';
+            wheel.style.transform = `rotate(${rotation}deg)`;
+          }, 100);
+        
+          // Aguarda a conclusão da rotação e exibe os números
+          setTimeout(() => {
+            displayResult(numbers);
+            // Libera o botão após a rotação e exibição dos números
+            document.getElementById('wheel').style.pointerEvents = 'auto';
+          }, 4100);
+        }
+        
+        function displayResult(numbers) {
+          const resultDiv = document.getElementById('result');
+          resultDiv.innerHTML = '<h2><h4>Números Sorteados</h4></h2>';
+          
+          const span = document.createElement('span');
+          numbers.sort((a, b) => a - b); // Ordena os números em ordem crescente
+          span.textContent = numbers.join(', ');
+        
+          resultDiv.appendChild(span);
+        }
+      </script>
 
-    <img src="./trevo4.png" alt="" width="200">
     <h2>Bolão da Mega da Virada RTE</h2>
+
 
     <ul class="participant-list">
         <li class="participant" onclick="showTicketDetails('participant1')">Beatriz Veratti</li>
@@ -163,9 +225,303 @@
         <!-- Adicione mais participantes conforme necessário -->
     </ul>
 
+    
+    <div id="participant16" class="ticket-details">
+        <span class="close-button" onclick="closeTicketDetails('participant16')">X</span>
+        <h2>Silvana</h2> <h3>Valor Total a ser Pago: 20,00</h3>
+        <table>
+            <tr>
+                <th>Bilhete</th>
+                <th>Números</th>
+                <th>Pago</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>01, 24, 33, 47, 53, 60</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>02, 14, 35, 36, 41, 42</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>04, 12, 17, 21, 27, 42</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>03, 06, 09, 14, 48, 51</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <!-- Adicione mais bilhetes conforme necessário -->
+        </table>
+
+
+    </div>
+
+      
+    <div id="participant10" class="ticket-details">
+        <span class="close-button" onclick="closeTicketDetails('participant10')">X</span>
+        <h2>Eduando Navarro</h2> <h3>Valor Total a ser Pago: 20,00</h3>
+        <table>
+            <tr>
+                <th>Bilhete</th>
+                <th>Números</th>
+                <th>Pago</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>02, 12, 19, 26, 27, 60</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>18, 24, 26, 33, 47, 58</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>02, 09, 10, 22, 43, 44</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>11, 12, 27, 30, 40, 50</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <!-- Adicione mais bilhetes conforme necessário -->
+        </table>
+
+
+    </div>
+
+    <div id="participant14" class="ticket-details">
+        <span class="close-button" onclick="closeTicketDetails('participant14')">X</span>
+        <h2>Fernando</h2> <h3>Valor Total a ser Pago: 20,00</h3>
+        <table>
+            <tr>
+                <th>Bilhete</th>
+                <th>Números</th>
+                <th>Pago</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>03, 20, 33, 34, 36, 58</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>02, 04, 11, 12, 17, 18</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>10, 17, 23, 28, 31, 32</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>10, 17, 23, 31, 34, 46</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <!-- Adicione mais bilhetes conforme necessário -->
+        </table>
+
+
+    </div>
+    
+    <div id="participant13" class="ticket-details">
+        <span class="close-button" onclick="closeTicketDetails('participant13')">X</span>
+        <h2>Bruno Eugenio</h2> <h3>Valor Total a ser Pago: 20,00</h3>
+        <table>
+            <tr>
+                <th>Bilhete</th>
+                <th>Números</th>
+                <th>Pago</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>01, 07, 12, 26, 30, 31</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>01, 09, 13, 28, 45, 47</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>07, 19, 37, 42, 51, 54</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>04, 08, 14, 23, 29, 38</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <!-- Adicione mais bilhetes conforme necessário -->
+        </table>
+
+
+    </div>
+
+    
+    <div id="participant12" class="ticket-details">
+        <span class="close-button" onclick="closeTicketDetails('participant12')">X</span>
+        <h2>Telma</h2> <h3>Valor Total a ser Pago: 20,00</h3>
+        <table>
+            <tr>
+                <th>Bilhete</th>
+                <th>Números</th>
+                <th>Pago</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>01, 07, 12, 26, 30, 31</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>01, 09, 13, 28, 45, 47</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>07, 19, 37, 42, 51, 54</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>04, 08, 14, 23, 29, 38</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <!-- Adicione mais bilhetes conforme necessário -->
+        </table>
+
+
+    </div>
+
+    <div id="participant7" class="ticket-details">
+        <span class="close-button" onclick="closeTicketDetails('participant7')">X</span>
+        <h2>Amanda</h2> <h3>Valor Total a ser Pago: 30,00</h3>
+        <table>
+            <tr>
+                <th>Bilhete</th>
+                <th>Números</th>
+                <th>Pago</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>02, 05, 10, 16, 23, 47</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>06, 15, 20, 27, 33, 58</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>03, 18, 32, 41, 47, 59</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>01, 08, 12, 33, 40, 58</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>06, 08, 14, 27, 37, 46</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>07, 12, 15, 34, 51, 60</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <!-- Adicione mais bilhetes conforme necessário -->
+        </table>
+
+
+    </div>
+
+    <div id="participant4" class="ticket-details">
+        <span class="close-button" onclick="closeTicketDetails('participant4')">X</span>
+        <h2>Marco</h2> <h3>Valor Total a ser Pago: 0,00</h3>
+        <table>
+            <tr>
+                <th>Bilhete</th>
+                <th>Números</th>
+                <th>Pago</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>05, 10, 19, 23, 37, 53</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>06, 11, 31, 39, 44, 56</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>04, 08, 12, 27, 30, 59</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>07, 13, 21, 22, 47, 60</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <!-- Adicione mais bilhetes conforme necessário -->
+        </table>
+
+
+    </div>
+
+    
+    <div id="participant11" class="ticket-details">
+        <span class="close-button" onclick="closeTicketDetails('participant11')">X</span>
+        <h2>Priscila</h2> <h3>Valor Total a ser Pago: 20,00</h3>
+        <table>
+            <tr>
+                <th>Bilhete</th>
+                <th>Números</th>
+                <th>Pago</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>03, 13, 18, 33, 46, 57</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>09, 10, 27, 34, 47, 59</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>05, 17, 23, 31, 42, 53</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>01, 19, 29, 37, 49, 54</td>
+                <td class="not-paid">Não</td>
+            </tr>
+            <!-- Adicione mais bilhetes conforme necessário -->
+        </table>
+
+
+    </div>
+
     <div id="participant1" class="ticket-details">
         <span class="close-button" onclick="closeTicketDetails('participant1')">X</span>
-        <h2>Beatriz</h2>
+        <h2>Beatriz</h2> <h3>Valor Total a ser Pago: 20,00</h3>
         <table>
             <tr>
                 <th>Bilhete</th>
@@ -201,7 +557,7 @@
     <div id="participant2" class="ticket-details">
         <span class="close-button" onclick="closeTicketDetails('participant2')">X</span>
 
-        <h2>Stephanie</h2>
+        <h2>Stephanie</h2> <h3>Valor Total a ser Pago: 20,00</h3>
         <table>
             <tr>
                 <th>Bilhete</th>
@@ -237,7 +593,7 @@
     <div id="participant3" class="ticket-details">
         <span class="close-button" onclick="closeTicketDetails('participant3')">X</span>
 
-        <h2>Elton</h2>
+        <h2>Elton</h2> <h3>Valor Total a ser Pago: 20,00</h3>
         <table>
             <tr>
                 <th>Bilhete</th>
@@ -272,7 +628,7 @@
     <div id="participant5" class="ticket-details">
         <span class="close-button" onclick="closeTicketDetails('participant5')">X</span>
 
-        <h2>Eduardo Soufen</h2>
+        <h2>Eduardo Soufen</h2> <h3>Valor Total a ser Pago: 20,00</h3>
         <table>
             <tr>
                 <th>Bilhete</th>
@@ -307,7 +663,7 @@
     <div id="participant15" class="ticket-details">
         <span class="close-button" onclick="closeTicketDetails('participant15')">X</span>
 
-        <h2>João Carlos</h2>
+        <h2>João Carlos</h2> <h3>Valor Total a ser Pago: 20,00</h3>
         <table>
             <tr>
                 <th>Bilhete</th>
