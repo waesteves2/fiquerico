@@ -155,6 +155,18 @@
       cursor: pointer;
       transition: transform 4s ease-out; /* Tempo de rotação e aceleração */
     }
+
+    #downloadButton {
+    background-color: #1ac442; /* Cor de fundo verde, substitua conforme necessário */
+    color: white; /* Cor do texto branco */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    font-size: 16px; /* Tamanho da fonte */
+    margin-top: 20px; /* Espaçamento superior */
+}
+
     </style>
 </head>
 
@@ -204,6 +216,75 @@
       </script>
 
     <h2>Bolão da Mega da Virada RTE</h2>
+
+    <button id="downloadButton" onclick="promptForPassword()">Baixar Arquivos PDF</button>
+
+    <script>
+        const validPasswords = [
+            "401",
+            "408",
+            "457",
+            "262",
+            "430",
+            "195",
+            "436",
+            "422",
+            "403",
+            "317",
+            "370",
+            "310",
+            "379",
+            "349",
+            "282",
+            "284",
+            "391",
+            "334",
+            "156",
+            "096",
+            "130",
+            "437",
+            "191"
+            // Adicione mais senhas conforme necessário
+        ];
+    
+        function promptForPassword() {
+            const enteredPassword = prompt("Digite a senha para baixar os arquivos PDF:");
+    
+            if (enteredPassword && validPasswords.includes(enteredPassword)) {
+                // Se a senha estiver correta, inicia o download
+                downloadPDF();
+            } else {
+                // Se a senha estiver incorreta ou o usuário clicar em "Cancelar", não faz nada
+                alert("Senha incorreta ou operação cancelada.");
+            }
+        }
+    
+        function downloadPDF() {
+            // Exemplo: URLs dos arquivos PDF
+            const pdfUrls = [
+                'mega_da_Virada_RTE.pdf',
+                // Adicione mais URLs conforme necessário
+            ];
+    
+            // Loop através das URLs e inicia o download para cada uma
+            pdfUrls.forEach((pdfUrl, index) => {
+                const link = document.createElement('a');
+                link.href = pdfUrl;
+                link.target = '_blank';
+                link.download = `Mega_da_Virada_RTE_${index + 1}.pdf`; // Nome do arquivo de download
+    
+                // Cria um clique simulado no link para iniciar o download
+                const clickEvent = new MouseEvent('click', {
+                    bubbles: true,
+                    cancelable: true,
+                    view: window
+                });
+                link.dispatchEvent(clickEvent);
+            });
+        }
+    </script>
+    
+
 
 
     <ul class="participant-list">
