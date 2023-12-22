@@ -262,7 +262,7 @@
         function downloadPDF() {
             // Exemplo: URLs dos arquivos PDF
             const pdfUrls = [
-                'https://drive.google.com/file/d/12uTpneuMeV-dZ55RbWnfl9wS0l-9mYoQ/view?usp=drive_link',
+                'mega.pdf',
                 // Adicione mais URLs conforme necessário
             ];
     
@@ -271,7 +271,7 @@
                 const link = document.createElement('a');
                 link.href = pdfUrl;
                 link.target = '_blank';
-                link.download = `Mega_da_Virada_RTE_${index + 1}.pdf`; // Nome do arquivo de download
+                link.download = `Mega da Virada RTE ${index + 1}.pdf`; // Nome do arquivo de download
     
                 // Cria um clique simulado no link para iniciar o download
                 const clickEvent = new MouseEvent('click', {
